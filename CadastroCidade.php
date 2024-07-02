@@ -8,7 +8,14 @@
 </head>
 <body>
     <?php
-        include('includes/')
+        include('includes/conexao.php');
+        $nome = $_POST['nome'];
+        $estado = $_POST['estado'];
+        //INSERT INTO cidade (nome, estado)
+        //VALUES ('$nome', '$estado')
+
+        $sql = "INSERT INTO cidade (nome, estado)";
+        $sql .= " VALUES('".$nome."','".$estado."')";
 
     ?>
 </body>
