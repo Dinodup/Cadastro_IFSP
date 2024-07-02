@@ -19,12 +19,13 @@
 ?>
 
     <h1>Consulta de Cidades</h1>
-    <a href="CadastroCidade.html">Cadastrar nova Cidade</a>
+    <a href="CadastroCidade.html">Cadastrar nova Cidade<br></a>
+    <a href="inicial.html">Voltar para a Tela Inicial</a>
 
     <table align="center" border="1" width="500">
         <tr>
             <th>Código</th>
-            <th>Nomadwawddawde</th>
+            <th>Cidade</th>
             <th>Estado</th>
         </tr>
         <?php
