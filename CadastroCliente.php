@@ -11,15 +11,18 @@
     <?php
         include('includes/conexao.php');
         $nome = $_POST['nome'];
-        $estado = $_POST['estado'];
-        echo "<h1>Dados da cidade</h1>";
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        echo "<h1>Dados do cliente</h1>";
         echo "Nome: $nome<br>";
-        echo "Estado: $estado<br>";
+        echo "Email: $email<br>";
+        echo "Senha: $senha<br>";
+
         //INSERT INTO cidade (nome, estado)
         //VALUES ('$nome', '$estado')
 
-        $sql = "INSERT INTO cidade (nome, estado)";
-        $sql .= " VALUES('".$nome."','".$estado."')";
+        $sql = "INSERT INTO cliente (nome, email, senha)";
+        $sql .= " VALUES('".$nome."','".$email."','".$senha."')";
         echo $sql;
 
         //executa comando no banco de dados
@@ -32,7 +35,7 @@
             echo mysqli_error($con);
         }
     ?>
-    <h3>Ver na <a href="ListarCidade.php">Tabela</a></h3>
-    <h3><a href="CadastroCidade.html">Voltar</a></h3>
+    <h3><a href="ListarCliente.php">Ver na Tabela</a></h3>
+    <h3><a href="CadastroCliente.html">Voltar</a></h3>
 </body>
 </html>
