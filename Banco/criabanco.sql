@@ -1,30 +1,41 @@
--- Deleta banco de cados caso exista 
-DROP DATABASE IF EXISTS IFSP;
-
--- Cria banco de cados caso não exista 
-CREATE DATABASE IF NOT EXISTS IFSP;
-
--- Seleciona banco de dados para uso
-USE IFSP;
-
--- Cria a tabela de cidades
-CREATE TABLE Cidade
+create database IFSP;
+use IFSP;
+create table cidade
 (
-    id      INT AUTO INCREMENT,
-    nome    VARCHAR(100),
-    estado  VARCHAR (002),
-    PRIMARY KEY(id)
+	id int auto_increment,
+	nome varchar(50),
+    estado varchar(02),
+	primary key (id)
 );
 
--- Cria tabela de clientes.
-CREATE TABLE Cliente
+create table cliente
 (
-    id          INT AUTO INCREMENT,
-    nome        VARCHAR(100),
-    email       VARCHAR(100),
-    senha       VARCHAR(50),
-    ativo       BOOL,
-    id_cidade   INT,
-    PRIMARY KEY(id),
-    CONSTRAINT FK_ClienteCidade FOREIGN KEY (id_cidade) REFERENCES Cidade(id)
+	id int auto_increment,
+	nome varchar(50),
+	email varchar(50),
+	senha varchar(10),
+	ativo bool,
+	id_cidade int,
+	primary key (id),
+	constraint fk_ClienteCidade foreign key(id_cidade) references cidade(id)
 );
+
+insert into cidade(nome, estado) values
+('Birigui','SP'),
+('SP','RJ'),
+('Fortaleza','CE'),
+('Rio de Janeiro','RJ'),
+('Araçatuba','SP');
+select * from cidade where estado = 'SP';
+insert into cliente(nome, email, senha,id_cidade) values
+('Abrao','Abrao@gmail.com','123','1'),
+('Bruna','Bruna@gmail.com','1234','1'),
+('Carlinhos','C@outlook.com','12345','2'),
+('Dudu','Dudu@hotmail.com','123456','3'),
+('Ednaldo','edna@outlook.com','1234567','4');
+select * from cliente where id_cidade = '1';
+update cidade set nome='Birigui' where id = 1;
+update cliente set nome='Murilo' where id = 1;
+update cliente set id_cidade = '5' where id = '5';
+delete from cidade where id = 4;
+delete from cliente where id = 1;
