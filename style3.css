@@ -1,0 +1,39 @@
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    font-size: 2em;
+    margin: 20px 0;
+    color: #00ff00;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+span {
+    color: #ffdd57;
+}
+
+p span {
+    font-weight: bold;
+}
+
+p:last-of-type {
+    margin-top: 20px;
+    color: #ff5733;
+}
+
