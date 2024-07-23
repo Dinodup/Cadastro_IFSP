@@ -32,6 +32,19 @@ input[type="text"], select {
     color: #333;
 }
 
+#nome, 
+#email{
+    width: 95%;
+}
+#senha{
+    width: 95%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    color: #333;
+}
+
 button {
     margin: 10px;
     padding: 10px 20px;
@@ -49,7 +62,7 @@ button:hover {
 }
 
 a {
-    color: #3498db; /* cor dos links */
+    color: #ddd; /* cor dos links */
     text-decoration: none;
     display: inline-block;
     margin-top: 20px;
@@ -63,6 +76,6 @@ a:hover {
 
 fieldset{
     width: 500px;
-    border-color: black;
+    border-color: white;
     border-radius: 10px;
 }

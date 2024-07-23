@@ -1,3 +1,10 @@
+<?php
+    include('includes/conexao.php');
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM cliente WHERE id=$id";
+    $result = mysqli_query($con,$sql);
+    $row = mysqli_fetch_array($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,22 +15,25 @@
     <link rel="stylesheet" href="style/style3.css">
 </head>
 <body>
-    <form action="CadastroClienteExe.php" method="post">
-        <fieldset>
-            <legend>Cadastro de Clientes</legend>
+    <form action="AlteraClienteExe.php" method="post">
+    <fieldset>
+        <legend>Cadastro de Clientes</legend>
         <div>
             <label for="nome">Nome: </label>
-            <input type="text" name="nome" id="nome">
-        </div><p></p>
+            <input type="text" name="nome" id="nome"
+                    value="<?php echo $row['nome']?>">
+        </div>
 
         <div>
             <label for="email">Email: </label>
-            <input type="text" name="email" id="email">
-        </div><p></p>
+            <input type="text" name="email" id="email"
+                    value="<?php echo $row['email']?>">
+        </div>
 
         <div>
             <label for="senha">Senha: </label>
-            <input type="password" name="senha" id="senha">
+            <input type="password" name="senha" id="senha"
+                    value="<?php echo $row['senha']?>">
         </div>
 
         <h3>Situação</h3>
@@ -48,11 +58,15 @@
                 ?>
             </select>
         </div>
-        
-    <button type="submit">Cadastrar</button>
-        
+
+        <div>
+            <button type="submit">Alterar</button>
+        </div>
+        <div>
+            <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+        </div>
     </fieldset>
     </form>
-    <a href="inicial.html">Voltar para a Tela Inicial</a>
+    <a href="ListarCliente.php">Voltar</a>
 </body>
 </html>
