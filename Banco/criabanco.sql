@@ -22,7 +22,6 @@ create table cliente
 
 insert into cidade(nome, estado) values
 ('Birigui','SP'),
-('SP','RJ'),
 ('Fortaleza','CE'),
 ('Rio de Janeiro','RJ'),
 ('Araçatuba','SP');
